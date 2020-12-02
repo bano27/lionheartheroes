@@ -22,3 +22,5 @@ gradlew.bat
 settings.gradle
 
 MavenModule
+pom.xml
+README.md

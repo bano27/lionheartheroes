@@ -1,0 +1,36 @@
+{{#partial "content"}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                HeroName: IceBreath
+                Special_Power: ice breath
+                flaw: heat
+                Age: 17
+                Id: 1
+                <img src="/Images/bkg6.jpg">
+            </div>
+            <div class="col-md-6">
+                HeroName: Dizzy
+                Special_Power: pace
+                flaw: intelligence
+                Age: 5
+                Id: 2
+                <img src="/Images/bkg2.jpg">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                {{#each Myhero}}
+                    HeroName: {{ HeroName }}
+                    special_power: {{ special_power }}
+                    flaw: {{ flaw }}
+                    Age: {{ Age }}
+                    Id: {{ Id }}
+                {{/each}}
+            </div>
+        </div>
+        <h2><a href='/heroForm'>Create new Hero</a></h2>
+    </div>
+{{/partial}}
+
+{{> layout.hbs }}

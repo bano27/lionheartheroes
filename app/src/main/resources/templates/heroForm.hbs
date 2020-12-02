@@ -1,0 +1,28 @@
+{{#partial "content"}}
+    <div class="container row">
+        <div class="col-md-12">
+            <img src="/Images/wallpaper1.jpg">
+        </div>
+    </div>
+    <form action="/herohub">
+        <div class="form-group">
+            <label for="HeroName">Name your Hero</label>
+            <input id="HeroName" name="HeroName" class="form-control" type="text" placeholder="Enter HeroName">
+        </div>
+        <div class="form-group">
+            <label for="Special_Power">State ability</label>
+            <input id="Special_Power" name="Special_Power" class="form-control" type="text" placeholder="State Special Power">
+        </div>
+        <div class="form-group">
+            <label for="flaw">State Weakness</label>
+            <input id="flaw" name="flaw" class="form-control" type="text" placeholder="State Weakness">
+        </div>
+        <div class="form-group">
+            <label for="Age">State Hero's Age</label>
+            <input id="Age" name="Age" class="form-control" type="number" placeholder="Enter Hero's Age">
+        </div>
+        <button type="submit" class="btn">Generate Hero</button>
+    </form>
+{{/partial}}
+
+{{>layout.hbs}}

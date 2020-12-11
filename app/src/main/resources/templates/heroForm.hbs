@@ -1,17 +1,20 @@
+{{#partial "styles"}}
+    <link rel='stylesheet' href='/css/style.css' type="text/css">
+{{/partial}}
 {{#partial "content"}}
     <div class="container row">
         <div class="col-md-12">
-            <img src="/Images/wallpaper1.jpg">
+            <h2>CREATE YOUR HERO!!</h2>
         </div>
     </div>
-    <form action="/herohub">
+    <form action="/herohub" method="post" >
         <div class="form-group">
             <label for="HeroName">Name your Hero</label>
-            <input id="HeroName" name="HeroName" class="form-control" type="text" placeholder="Enter HeroName">
+            <input id="heroName" name="heroName" class="form-control" type="text" placeholder="Enter HeroName">
         </div>
         <div class="form-group">
             <label for="Special_Power">State ability</label>
-            <input id="Special_Power" name="Special_Power" class="form-control" type="text" placeholder="State Special Power">
+            <input id="power" name="power" class="form-control" type="text" placeholder="State Special Power">
         </div>
         <div class="form-group">
             <label for="flaw">State Weakness</label>
@@ -19,9 +22,9 @@
         </div>
         <div class="form-group">
             <label for="Age">State Hero's Age</label>
-            <input id="Age" name="Age" class="form-control" type="number" placeholder="Enter Hero's Age">
+            <input id="age" name="age" class="form-control" type="number" placeholder="Enter Hero's Age">
         </div>
-        <button type="submit" class="btn">Generate Hero</button>
+        <button type="submit" class="btn btn-danger">Generate Hero</button>
     </form>
 {{/partial}}
 

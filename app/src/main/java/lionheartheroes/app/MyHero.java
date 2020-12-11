@@ -5,13 +5,15 @@ package lionheartheroes.app;
 
 import java.util.ArrayList;
 
+import java.util.List;
+
 public class MyHero {
     private String heroName;
     private String special_power;
     private String flaw;
     private int age;
     private int id;
-    private static ArrayList<MyHero> instances = new ArrayList<>();
+    private static List<MyHero> instances = new ArrayList<>();
 
     public MyHero(String heroName, String special_power, String flaw, Integer age){
         this.heroName = heroName;
@@ -27,7 +29,7 @@ public class MyHero {
     public String getFlaw(){return this.flaw;}
     public int getAge(){return this.age;}
     public int getId(){return this.id;}
-    public static ArrayList<MyHero> getAllInstances(){return instances;}
+    public static List<MyHero> getAllInstances(){return instances;}
     public static MyHero findHeroById(int id){return instances.get(id-1);}
 
     public static MyHero newHeroCharacter(){

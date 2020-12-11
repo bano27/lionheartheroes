@@ -1,26 +1,28 @@
+{{#partial "styles"}}
+    <link rel='stylesheet' href='/css/style.css' type="text/css">
+{{/partial}}
 {{#partial "content"}}
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                SquadName: Marvel
-                Mission_Control: Protect Earth
-                Squad_Size: 22
-                <img src="/Images/bkg5.jpg">
+                <p>SquadName: Marvel</p>
+                <p>Mission_Control: Protect Earth</p>
+                <p>Squad_Size: 22</p>
+                <!--<img src="/Images/bkg5.jpg">-->
             </div>
             <div class="col-md-6">
-                SquadName: Avengers
-                Mission_Control: Peace Mission to earth
-                Squad_Size: 15
-                <img src="/Images/bkg4.jpg">
+                <p>SquadName: Avengers</p>
+                <p>Mission_Control: Peace Mission to earth</p>
+                <p>Squad_Size: 15</p>
+                <!--<img src="/Images/bkg4.jpg">-->
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                {{#each SquadHeroes}}
-                    SquadName: {{ SquadName }}
-                    Mission_Control: {{ Mission_Control }}
-                    Squad_Size: {{ Squad_Size }}
-                {{/each}}
+                <h2>HERE IS YOUR NEW HEROSQUAD</h2>
+                    <p>SquadName: {{ squadName }}</p>
+                    <p>Mission_Control: {{ mission }}</p>
+                    <p>Squad_Size: {{ size }}</p>
             </div>
         </div>
         <h2><a href='/squadForm'>Create new HeroSquad</a></h2>

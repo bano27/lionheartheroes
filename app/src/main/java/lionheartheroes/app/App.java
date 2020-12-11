@@ -13,6 +13,7 @@ import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static spark.Spark.*;
@@ -29,8 +30,10 @@ public class App {
         port(getHerokuAssignedPort());
         staticFileLocation("/public");
 
-        get("/", (request, response) -> {
+        get("/herohub", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
+            List<MyHero> heroes = MyHero.getAllInstances();
+            model.put("heroes",heroes);
             return new ModelAndView(new HashMap(), "herohub.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -39,7 +42,7 @@ public class App {
             return new ModelAndView(new HashMap(), "squadhub.hbs");
         }, new HandlebarsTemplateEngine());
 
-        get("/heroForm", (request, response) -> {
+        get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             return new ModelAndView(new HashMap(), "heroForm.hbs");
         }, new HandlebarsTemplateEngine());
@@ -51,23 +54,26 @@ public class App {
 
         post("/squadhub", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-            String SquadName = request.queryParams("SquadName");
-            String Mission_Control = request.queryParams("Mission_Control");
-            int Squad_Size = Integer.parseInt(request.queryParams("Squad_Size"));
-            SquadHeroes newTeamSquad = new SquadHeroes(SquadName, Mission_Control, Squad_Size);
-            response.redirect("squadhub.hbs");
-            return null;
+            String squadName = request.queryParams("squadName");
+            String mission = request.queryParams("mission");
+            int size = Integer.parseInt(request.queryParams("size"));
+            model.put("squadName", squadName);
+            model.put("mission", mission);
+            model.put("size", size);
+            return new ModelAndView(model, "squadhub.hbs");
         }, new HandlebarsTemplateEngine());
 
-        post("/", (request, response) -> {
+        post("/herohub", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-            String HeroName = request.queryParams("HeroName");
-            String Special_Power = request.queryParams("Special_Power");
+            String heroName = request.queryParams("heroName");
+            String power = request.queryParams("power");
             String flaw = request.queryParams("flaw");
-            int Age = Integer.parseInt(request.queryParams("Age"));
-            MyHero newHero = new MyHero(HeroName, Special_Power, flaw, Age);
-            response.redirect("herohub.hbs");
-            return null;
+            int age = Integer.parseInt(request.queryParams("age"));
+            model.put("heroName", heroName);
+            model.put("power", power);
+            model.put("flaw", flaw);
+            model.put("age", age);
+            return new ModelAndView(model, "herohub.hbs");
         }, new HandlebarsTemplateEngine());
     }
 }

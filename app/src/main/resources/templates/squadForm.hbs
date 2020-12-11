@@ -1,23 +1,26 @@
+{{#partial "styles"}}
+    <link rel='stylesheet' href='/css/Style.css' type="text/css">
+{{/partial}}
 {{#partial "content"}}
     <div class="container row">
         <div class="col-md-12">
-            <img src="/Images/bkg5.jpg">
+            <h2>CREATE YOUR HEROSQUAD!!</h2>
         </div>
     </div>
     <form action="/squadhub" method="post">
         <div class="form-group">
             <label for="SquadName">Name your Squad</label>
-            <input id="SquadName" name="SquadName" class="form-control" type="text" placeholder="Enter SquadName">
+            <input id="squadName" name="squadName" class="form-control" type="text" placeholder="Enter SquadName">
         </div>
         <div class="form-group">
             <label for="Mission_Control">Set Mission</label>
-            <input id="Mission_Control" name="Mission_Control" class="form-control" type="text" placeholder="Set Mission">
+            <input id="mission" name="mission" class="form-control" type="text" placeholder="Set Mission">
         </div>
         <div class="form-group">
             <label for="Squad_Size">Number of hero's</label>
-            <input id="Squad_Size" name="Squad_Size" class="form-control" type="number" placeholder="Enter Number of hero's">
+            <input id="size" name="size" class="form-control" type="number" placeholder="Enter Number of hero's">
         </div>
-        <button type="submit" class="btn">Generate Squad</button>
+        <button type="submit" class="btn btn-danger">Generate Squad</button>
     </form>
 {{/partial}}
 

@@ -1,35 +1,37 @@
+{{#partial "styles"}}
+    <link rel='stylesheet' href='/css/style.css' type="text/css">
+{{/partial}}
 {{#partial "content"}}
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                HeroName: IceBreath
-                Special_Power: ice breath
-                flaw: heat
-                Age: 17
-                Id: 1
-                <img src="/Images/bkg6.jpg">
+                <p>HeroName: IceBreath</p>
+                <p>Special_Power: ice breath</p>
+                <p>flaw: heat</p>
+                <p>Age: 17</p>
+                <p>Id: 1</p>
+                <!--<img src="/Images/bkg6.jpg">-->
             </div>
             <div class="col-md-6">
-                HeroName: Dizzy
-                Special_Power: pace
-                flaw: intelligence
-                Age: 5
-                Id: 2
-                <img src="/Images/bkg2.jpg">
+                <p>HeroName: Dizzy</p>
+                <p>Special_Power: pace</p>
+                <p>flaw: intelligence</p>
+                <p>Age: 5</p>
+                <p>Id: 2</p>
+                <!--<img src="/Images/bkg2.jpg">-->
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                {{#each Myhero}}
-                    HeroName: {{ HeroName }}
-                    special_power: {{ special_power }}
-                    flaw: {{ flaw }}
-                    Age: {{ Age }}
-                    Id: {{ Id }}
-                {{/each}}
+                <h2>HERE IS YOUR NEW HERO</h2>
+                    <p>HeroName: {{ heroName }}</p>
+                    <p>special_power: {{ power }}</p>
+                    <p>flaw: {{ flaw }}</p>
+                    <p>Age: {{ age }}</p>
             </div>
         </div>
         <h2><a href='/heroForm'>Create new Hero</a></h2>
+        <h2><a href='/squadForm'>Create new HeroSquad</a></h2>
     </div>
 {{/partial}}
 

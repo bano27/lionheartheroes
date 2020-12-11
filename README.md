@@ -1,8 +1,8 @@
 ## HEROHUB
 
 HeroHub is an app that allows users to create superhero characters and create superhero squads of the own making.
-<img src="Images/screenshot1.png" width=300>
-<img src="Images/screenshot2.png" width=300>
+<img src="app/src/main/resources/public/Images/screenshot1.png" width=300>
+<img src="app/src/main/resources/public/Images/screenshot2.png" width=300>
 
 ## Author
 

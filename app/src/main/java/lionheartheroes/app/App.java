@@ -57,6 +57,9 @@ public class App {
             String squadName = request.queryParams("squadName");
             String mission = request.queryParams("mission");
             int size = Integer.parseInt(request.queryParams("size"));
+            request.session().attribute("squadName", squadName);
+            request.session().attribute("mission", mission);
+            request.session().attribute("size", size);
             model.put("squadName", squadName);
             model.put("mission", mission);
             model.put("size", size);
@@ -69,6 +72,10 @@ public class App {
             String power = request.queryParams("power");
             String flaw = request.queryParams("flaw");
             int age = Integer.parseInt(request.queryParams("age"));
+            request.session().attribute("heroName", heroName);
+            request.session().attribute("power", power);
+            request.session().attribute("flaw", flaw);
+            request.session().attribute("age", age);
             model.put("heroName", heroName);
             model.put("power", power);
             model.put("flaw", flaw);

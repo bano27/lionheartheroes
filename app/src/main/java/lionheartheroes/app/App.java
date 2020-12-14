@@ -16,6 +16,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import java.util.ArrayList;
+
 import static spark.Spark.*;
 
 public class App {
@@ -39,6 +41,8 @@ public class App {
 
         get("/squadhub", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
+            ArrayList<SquadHeroes> posts = SquadHeroes.getInstances();
+            model.put("posts", posts);
             return new ModelAndView(new HashMap(), "squadhub.hbs");
         }, new HandlebarsTemplateEngine());
 

@@ -20,9 +20,11 @@
         <div class="row">
             <div class="col-md-12">
                 <h2>HERE IS YOUR NEW HEROSQUAD</h2>
+                {{#each posts}}
                     <p>SquadName: {{ squadName }}</p>
                     <p>Mission_Control: {{ mission }}</p>
                     <p>Squad_Size: {{ size }}</p>
+                {{/each}}
             </div>
         </div>
         <h2><a href='/squadForm'>Create new HeroSquad</a></h2>
